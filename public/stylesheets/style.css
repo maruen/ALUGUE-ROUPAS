@@ -601,7 +601,7 @@ body {
 .slider-image{}
 .nivo-caption{
 	background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-	height:100%;
+	height: 90%;
 	opacity:1;
 }
 .slider-caption-1{}
@@ -640,7 +640,7 @@ text-shadow: 0 0 2px rgba(0, 0, 0, .05)
 }
 .cap-dec p{
   color: #fff;
-  font-size: 14px;
+  font-size: 22px;
   font-weight: normal;
 }
 .cap-readmore{}
@@ -818,7 +818,7 @@ font-weight:bold;
     padding: 0px 0px 50px;
 }
 .section-title {
-    background: transparent url("/assets/images/layout1.png") no-repeat scroll 46%57%;
+/*     background: transparent url("/assets/images/layout1.png") no-repeat scroll 46%57%; */
     padding: 20px 0px 35px;
 }
 .section-title h2,

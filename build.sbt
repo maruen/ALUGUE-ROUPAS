@@ -1,4 +1,4 @@
-name := """ALUGUE-ROUPAS"""
+name := "ALUGUE-ROUPAS"
 
 version := "1.0-SNAPSHOT"
 
