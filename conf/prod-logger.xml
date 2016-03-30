@@ -1,0 +1,53 @@
+<configuration>
+
+    <appender name="APPLICATION_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${ALUGUE_ROUPAS_HOME}/logs/application/application.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${ALUGUE_ROUPAS_HOME}/logs/application/application-%d{dd-MM-yyyy}.gz</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+           <pattern>%date{dd-MM-yyyy HH:mm:ss} [%level] L[%logger] T[%thread] %message%n%xException</pattern>
+        </encoder>
+    </appender>
+    
+    <appender name="APPLICATION_STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+             <pattern>%date{dd-MM-yyyy HH:mm:ss} [%level] L[%logger] T[%thread] %message%n%xException</pattern>
+        </encoder>
+    </appender>
+    
+    <appender name="ACCESS_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${ALUGUE_ROUPAS_HOME}/logs/access/access.log</file>
+        
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <fileNamePattern>${ALUGUE_ROUPAS_HOME}/logs/access/access.%i.gz</fileNamePattern>
+            <minIndex>1</minIndex>
+            <maxIndex>5</maxIndex>
+        </rollingPolicy>
+    
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <maxFileSize>5MB</maxFileSize>
+        </triggeringPolicy>
+        
+        <encoder>
+            <pattern>%date{dd-MM-yyyy HH:mm:ss} %message%n</pattern>
+            <!-- this quadruples logging throughput -->
+            <immediateFlush>true</immediateFlush>
+        </encoder>
+    </appender>
+    
+    
+     <!-- additivity=false ensures access log data only goes to the access log -->
+    <logger name="access" level="INFO" additivity="false">
+        <appender-ref ref="ACCESS_FILE" />
+    </logger>
+    
+    
+    <root level="INFO">
+        <appender-ref ref="APPLICATION_STDOUT"  />
+        <appender-ref ref="APPLICATION_FILE"    />
+    </root>
+
+</configuration>
+
