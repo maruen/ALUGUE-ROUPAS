@@ -819,11 +819,11 @@ font-weight:bold;
 }
 .section-title {
 /*     background: transparent url("/assets/images/layout1.png") no-repeat scroll 46%57%; */
-    padding: 20px 0px 35px;
+    padding: 20px 0px 10px;
 }
 .section-title h2,
 .section-titleshop h2 {
-    margin: 45px 0px 35px;
+    margin: 60px 0px 5px;
     text-align: center;
     padding: 11px 0px;
     font-size: 24px;
